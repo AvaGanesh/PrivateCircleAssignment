@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>
+        Private Circle
+    </h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <input class="custom-input" type="search" placeholder="Search by Title" [(ngModel)]="searchText">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <app-table-data [dataSource]="tableData | filter : searchText" (openDetails)="showDetails($event)"></app-table-data>
+        </div>
+        <div class="col-lg-4">
+            <app-details-view [itemDetails]="selectedItemDetails"></app-details-view>
+        </div>
+    </div>
+</div>

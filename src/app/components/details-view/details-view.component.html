@@ -1,0 +1,54 @@
+<div class="details-container" *ngIf="itemDetails;else showNoItemTemplate">
+    <div class="row">
+        <div class="col">
+            <h2>
+                {{itemDetails.Title}}
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-divider></mat-divider>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>
+                {{itemDetails.Details}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <h4>
+                Date
+            </h4>
+        </div>
+        <div class="col-lg-9">
+            <h3>
+                {{itemDetails.Date | date}}
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <h4>
+                Entites
+            </h4>
+        </div>
+        <div class="col-lg-9">
+            <h3>
+                {{itemDetails.Entries}}
+            </h3>
+        </div>
+    </div>
+    
+</div>
+<ng-template #showNoItemTemplate>
+    <div class="details-container">
+        <p>
+            Select an item to view the details
+        </p>
+        
+    </div>
+</ng-template>
